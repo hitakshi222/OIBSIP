@@ -1,0 +1,1151 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ahuja Hitakshi | Personal Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@500;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           ROOT VARIABLES
+        ========================= */
+
+        :root {
+            --bg: #5C4033;
+            --bg-dark: #422C22;
+            --surface: #F7EFE3;
+            --surface-light: #FFF8EE;
+            --text: #FFF8EE;
+            --cardtext: #3B2A21;
+            --accent: #C8A97E;
+            --accent-dark: #A98960;
+            --border: rgba(247, 239, 227, 0.25);
+        }
+
+
+        /* =========================
+           RESET
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 16px 8%;
+
+            background: rgba(92, 64, 51, 0.94);
+
+            backdrop-filter: blur(10px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo {
+            font-family: 'Allura', cursive;
+            font-size: 46px;
+            color: var(--text);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav a {
+            color: var(--text);
+            padding: 8px 12px;
+            border-radius: 8px;
+
+            font-size: 15px;
+
+            transition: 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--bg-dark);
+            background: var(--accent);
+        }
+
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 85vh;
+
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+
+            gap: 50px;
+            align-items: center;
+
+            padding: 80px 8%;
+        }
+
+        .hero-content {
+            max-width: 750px;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(42px, 6vw, 64px);
+            line-height: 1.1;
+
+            margin-bottom: 25px;
+        }
+
+        .hero-role {
+            font-size: 18px;
+            margin-bottom: 12px;
+        }
+
+        .hero-description {
+            margin-bottom: 12px;
+            opacity: 0.95;
+        }
+
+        .hero-skills {
+            margin-top: 15px;
+            opacity: 0.9;
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        .btn {
+            display: inline-block;
+
+            margin-top: 25px;
+            padding: 13px 24px;
+
+            border-radius: 10px;
+
+            background: var(--accent);
+            color: white;
+
+            font-weight: 600;
+
+            transition: 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           PROFILE CARD
+        ========================= */
+
+        .profile-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+
+            background: var(--surface);
+            color: var(--cardtext);
+
+            padding: 35px;
+
+            border-radius: 22px;
+
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .profile-photo {
+            width: 190px;
+            height: 190px;
+
+            border-radius: 50%;
+
+            background: var(--accent);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            margin-bottom: 25px;
+
+            border: 7px solid rgba(255, 255, 255, 0.65);
+
+            overflow: hidden;
+        }
+
+        .profile-photo span {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 60px;
+            font-weight: 700;
+            color: white;
+        }
+
+        .profile-card h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 34px;
+
+            margin-bottom: 12px;
+        }
+
+
+        /* =========================
+           SECTIONS
+        ========================= */
+
+        section {
+            padding: 70px 8%;
+            scroll-margin-top: 90px;
+        }
+
+        section h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 42px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           GRID
+        ========================= */
+
+        .grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 22px;
+        }
+
+
+        /* =========================
+           CARDS
+        ========================= */
+
+        .item {
+            background: var(--surface);
+            color: var(--cardtext);
+
+            padding: 25px;
+
+            border-radius: 16px;
+
+            transition: 0.3s ease;
+
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .item:hover {
+            transform: translateY(-7px);
+
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+        }
+
+        .item h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 25px;
+
+            margin-bottom: 10px;
+        }
+
+        .item p {
+            font-size: 15px;
+        }
+
+        .item a {
+            color: var(--cardtext);
+            font-weight: 600;
+        }
+
+        .item a:hover {
+            color: var(--accent-dark);
+        }
+
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-card {
+            max-width: 900px;
+
+            background: var(--surface);
+            color: var(--cardtext);
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-card p {
+            font-size: 17px;
+        }
+
+
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact-container {
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 22px;
+        }
+
+        .contact-card {
+            background: var(--surface);
+            color: var(--cardtext);
+
+            padding: 28px;
+
+            border-radius: 16px;
+
+            transition: 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 25px;
+
+            margin-bottom: 8px;
+        }
+
+        .contact-card a {
+            color: var(--cardtext);
+            word-break: break-word;
+        }
+
+        .contact-card a:hover {
+            color: var(--accent-dark);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px;
+
+            background: var(--bg-dark);
+
+            color: var(--text);
+
+            border-top: 1px solid var(--border);
+        }
+
+
+        /* =========================
+           SCROLL ANIMATION
+        ========================= */
+
+        .fade {
+            opacity: 0;
+
+            transform: translateY(30px);
+
+            transition: opacity 0.8s ease,
+                        transform 0.8s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+
+                padding: 12px 5%;
+            }
+
+            .logo {
+                font-size: 38px;
+            }
+
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            nav a {
+                font-size: 14px;
+                padding: 6px 8px;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+
+                padding: 60px 6%;
+
+                text-align: center;
+            }
+
+            .hero-content {
+                margin: auto;
+            }
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+
+            section h2 {
+                font-size: 36px;
+            }
+
+            .profile-card {
+                max-width: 450px;
+                margin: auto;
+            }
+
+        }
+
+
+        @media (max-width: 500px) {
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+            }
+
+            .profile-photo span {
+                font-size: 48px;
+            }
+
+            nav {
+                gap: 2px;
+            }
+
+            nav a {
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER / NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <div class="logo">
+            Ahuja Hitakshi
+        </div>
+
+        <nav>
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#skills">Skills</a>
+
+            <a href="#projects">Projects</a>
+
+            <a href="#certificates">Certificates</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero fade" id="home">
+
+        <div class="hero-content">
+
+            <h1>
+                Crafting Thoughtful Digital Experiences
+                with Design & AI
+            </h1>
+
+            <p class="hero-role">
+                <strong>
+                    UI/UX Designer • Web Developer • AI Prompt Engineer
+                </strong>
+            </p>
+
+            <p class="hero-description">
+                IBM Certified in Python & SQL
+            </p>
+
+            <p class="hero-description">
+                Creative and detail-oriented designer and developer
+                passionate about combining creativity, technology,
+                and artificial intelligence.
+            </p>
+
+            <p class="hero-skills">
+                HTML5 • CSS3 • JavaScript • Bootstrap • Core Java •
+                Python • SQL • OOP • Android Development
+            </p>
+
+            <a
+                class="btn"
+                href="https://drive.google.com/file/d/1p3jEt-liqoy1adbo5iIkLyXoSRsj6udv/view?usp=drive_link"
+                target="_blank">
+
+                Download Resume
+
+            </a>
+
+        </div>
+
+
+
+        <!-- Profile / Avatar -->
+
+        <div class="profile-card fade">
+
+            <div class="profile-photo">
+
+                <!-- Replace "AH" with your photo later -->
+
+                <span>AH</span>
+
+            </div>
+
+            <h2>
+                Ahuja Hitakshi
+            </h2>
+
+            <p>
+                UI/UX Designer • Graphic Designer • Web Developer
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         ABOUT SECTION
+    ========================== -->
+
+    <section id="about">
+
+        <h2>
+            About Me
+        </h2>
+
+        <div class="about-card fade">
+
+            <p>
+                I am a creative and detail-oriented UI/UX Designer
+                and Web Developer with experience in web technologies,
+                programming, AI prompt engineering, and graphic design.
+                I enjoy creating modern, user-friendly digital
+                experiences that combine creativity with technology.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SKILLS SECTION
+    ========================== -->
+
+    <section id="skills">
+
+        <h2>
+            Skills
+        </h2>
+
+        <div class="grid">
+
+
+            <div class="item fade">
+
+                <h3>
+                    Web Technologies
+                </h3>
+
+                <p>
+                    HTML5, CSS3, JavaScript, Bootstrap
+                </p>
+
+            </div>
+
+
+            <div class="item fade">
+
+                <h3>
+                    Programming Languages
+                </h3>
+
+                <p>
+                    Core Java, Python, SQL
+                </p>
+
+            </div>
+
+
+            <div class="item fade">
+
+                <h3>
+                    Programming Concepts
+                </h3>
+
+                <p>
+                    Object-Oriented Programming (OOP)
+                </p>
+
+            </div>
+
+
+            <div class="item fade">
+
+                <h3>
+                    Android Development
+                </h3>
+
+                <p>
+                    Basic Android App Development,
+                    Java Android SDK
+                </p>
+
+            </div>
+
+
+            <div class="item fade">
+
+                <h3>
+                    Design
+                </h3>
+
+                <p>
+                    UI/UX Design, Graphic Design, Canva
+                </p>
+
+            </div>
+
+
+            <div class="item fade">
+
+                <h3>
+                    Artificial Intelligence
+                </h3>
+
+                <p>
+                    AI Prompt Engineering,
+                    Generative AI Tools
+                </p>
+
+            </div>
+
+
+            <div class="item fade">
+
+                <h3>
+                    Professional Skills
+                </h3>
+
+                <p>
+                    Problem Solving, Creativity,
+                    Communication, Teamwork
+                </p>
+
+            </div>
+
+
+            <div class="item fade">
+
+                <h3>
+                    Certifications
+                </h3>
+
+                <p>
+                    IBM Certified in Python & SQL
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PROJECTS SECTION
+    ========================== -->
+
+    <section id="projects">
+
+        <h2>
+            Projects
+        </h2>
+
+        <div class="grid">
+
+
+            <div class="item fade">
+
+                <h3>
+                    Agentic AI Case Study
+                </h3>
+
+                <p>
+                    A case study exploring Agentic AI,
+                    AI agents, and practical applications
+                    of artificial intelligence.
+                </p>
+
+                <br>
+
+                <a
+                    href="https://www.linkedin.com/posts/hitakshi-ahuja-b06388237_project-relevanceai-aiagents-ugcPost-7417197146656985088-dowL/?utm_source=share&utm_medium=member_desktop&rcm=ACoAADr3WDYB50cHIAalUEvH3gCUXR7DJZgYWxw"
+                    target="_blank">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+
+
+            <div class="item fade">
+
+                <h3>
+                    UI Case Study
+                </h3>
+
+                <p>
+                    A UI design case study focused on creating
+                    simple, engaging, and user-friendly
+                    digital experiences.
+                </p>
+
+                <br>
+
+                <a
+                    href="https://www.linkedin.com/posts/hitakshi-ahuja-b06388237_lets-dive-into-basics-c-language-in-simple-activity-7445105298656247808-em_f?utm_source=share&utm_medium=member_desktop&rcm=ACoAADr3WDYB50cHIAalUEvH3gCUXR7DJZgYWxw"
+                    target="_blank">
+
+                    View Project →
+
+                </a>
+
+            </div>
+
+
+
+            <div class="item fade">
+
+                <h3>
+                    Python + SQL Project
+                </h3>
+
+                <p>
+                    A Python project using SQL and SQLite3
+                    for database-related operations.
+                </p>
+
+                <br>
+
+            </div>
+
+
+
+            <div class="item fade">
+
+                <h3>
+                    Canva Design Portfolio
+                </h3>
+
+                <p>
+                    A collection of creative graphic designs
+                    and visual content created using Canva.
+                </p>
+
+                <br>
+
+                <a
+                    href="https://www.instagram.com/hitakshi_design_journey/"
+                    target="_blank">
+
+                    View Designs →
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CERTIFICATES SECTION
+    ========================== -->
+
+    <section id="certificates">
+
+        <h2>
+            Certificates
+        </h2>
+
+        <div class="grid">
+
+
+            <div class="item fade">
+
+                <h3>
+                    IBM Python Certificate
+                </h3>
+
+                <p>
+                    IBM certification in Python programming.
+                </p>
+
+                <br>
+
+                <a
+                    href="https://drive.google.com/file/d/1MtfvJ8tOPu4HhLBVPFK-epg2atBNj3xK/view?usp=drive_link"
+                    target="_blank">
+
+                    View Certificate →
+
+                </a>
+
+            </div>
+
+
+
+            <div class="item fade">
+
+                <h3>
+                    IBM SQL Certificate
+                </h3>
+
+                <p>
+                    IBM certification in SQL and
+                    relational database concepts.
+                </p>
+
+                <br>
+
+                <a
+                    href="https://www.linkedin.com/posts/hitakshi-ahuja-b06388237_ibm-sql-relational-activity-7406727320759103488-XQZo"
+                    target="_blank">
+
+                    View Certificate →
+
+                </a>
+
+            </div>
+
+
+
+            <div class="item fade">
+
+                <h3>
+                    Quick Heal Appreciation Letter
+                </h3>
+
+                <p>
+                    Appreciation received from
+                    Quick Heal Foundation.
+                </p>
+
+                <br>
+
+                <a
+                    href="https://www.linkedin.com/posts/hitakshi-ahuja-b06388237_got-appreciation-letter-from-quick-heal-foundation-activity-7406026949833478144-jdGf"
+                    target="_blank">
+
+                    View Letter →
+
+                </a>
+
+            </div>
+
+
+
+            <div class="item fade">
+
+                <h3>
+                    UI/UX Design Certificate
+                </h3>
+
+                <p>
+                    Certification demonstrating UI/UX
+                    design knowledge and skills.
+                </p>
+
+                <br>
+
+                <a
+                    href="https://www.linkedin.com/in/hitakshi-ahuja-b06388237/overlay/Certifications/672762814/treasury/"
+                    target="_blank">
+
+                    View Certificate →
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT SECTION
+    ========================== -->
+
+    <section id="contact">
+
+        <h2>
+            Contact
+        </h2>
+
+        <div class="contact-container">
+
+
+            <div class="contact-card fade">
+
+                <h3>
+                    Name
+                </h3>
+
+                <p>
+                    Ahuja Hitakshi
+                </p>
+
+            </div>
+
+
+
+            <div class="contact-card fade">
+
+                <h3>
+                    Email
+                </h3>
+
+                <p>
+                    <a href="hitakshiahuja9@gmail.com">
+                        hitakshiahuja9@gmail.com
+                    </a>
+                </p>
+
+            </div>
+
+
+
+            <div class="contact-card fade">
+
+                <h3>
+                    LinkedIn
+                </h3>
+
+                <p>
+                    <a
+                        href="https://www.linkedin.com/in/hitakshi-ahuja-b06388237/"
+                        target="_blank">
+
+                        View LinkedIn Profile →
+
+                    </a>
+                </p>
+
+            </div>
+
+
+
+            <div class="contact-card fade">
+
+                <h3>
+                    GitHub
+                </h3>
+
+                <p>
+                    <a
+                        href="https://github.com/hitakshi222"
+                        target="_blank">
+
+                        View GitHub Profile →
+
+                    </a>
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        © 2026 Ahuja Hitakshi
+        <br>
+
+        Designed & Developed with HTML, CSS & JavaScript
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        // Scroll Animation
+
+        const observer =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach(
+                        (entry) => {
+
+                            if (entry.isIntersecting) {
+
+                                entry.target.classList.add("show");
+
+                            }
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.15
+                }
+            );
+
+
+        document
+            .querySelectorAll(".fade")
+            .forEach(
+                (element) => {
+
+                    observer.observe(element);
+
+                }
+            );
+
+
+        console.log(
+            "Portfolio Loaded Successfully"
+        );
+
+    </script>
+
+
+</body>
+
+</html>
+```
